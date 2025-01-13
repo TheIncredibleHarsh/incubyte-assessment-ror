@@ -22,4 +22,9 @@ describe StringCalculator do
         expect(StringCalculator.calculate("//;\n1;2;3")).to eq(6)
         expect(StringCalculator.calculate("//.\n1\n2.3")).to eq(6)
     end
+
+    it "throw error if the string has negative numbers" do
+        expect { StringCalculator.calculate("-1") }.to raise_error(ArgumentError)
+        expect { StringCalculator.calculate("//.\n1.-2.3") }.to raise_error(ArgumentError)
+    end
 end

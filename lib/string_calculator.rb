@@ -8,6 +8,14 @@ class StringCalculator
         else
             delimiter = ','
         end
-        numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i).sum
+        numbers = numbers.gsub("\n", delimiter)
+        numbers_array = numbers.split(delimiter).map(&:to_i)
+
+        negatives = numbers_array.select { |n| n < 0 }
+        if negatives.any?
+            raise ArgumentError,"Negative numbers are not allowed"
+        end
+
+        numbers_array.sum
     end
 end
