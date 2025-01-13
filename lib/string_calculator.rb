@@ -13,7 +13,7 @@ class StringCalculator
 
         negatives = numbers_array.select { |n| n < 0 }
         if negatives.any?
-            raise ArgumentError,"Negative numbers are not allowed"
+            raise ArgumentError,"Negative numbers are not allowed #{negatives}"
         end
 
         numbers_array.select{ |num| num <= 1000}.sum

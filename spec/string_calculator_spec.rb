@@ -24,8 +24,8 @@ describe StringCalculator do
     end
 
     it "throw error if the string has negative numbers" do
-        expect { StringCalculator.calculate("-1") }.to raise_error(ArgumentError)
-        expect { StringCalculator.calculate("//.\n1.-2.3") }.to raise_error(ArgumentError)
+        expect { StringCalculator.calculate("-1") }.to raise_error("Negative numbers are not allowed [-1]")
+        expect { StringCalculator.calculate("//.\n1.-2.3") }.to raise_error("Negative numbers are not allowed [-2]")
     end
 
     it "should ignore numbers more than 1000" do
