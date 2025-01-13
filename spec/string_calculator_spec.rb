@@ -17,4 +17,9 @@ describe StringCalculator do
     it "should return the sum even if there are new lines" do
         expect(StringCalculator.calculate("1\n2,3")).to eq(6)
     end
+
+    it "should support different delimiters" do
+        expect(StringCalculator.calculate("//;\n1;2;3")).to eq(6)
+        expect(StringCalculator.calculate("//.\n1\n2.3")).to eq(6)
+    end
 end
