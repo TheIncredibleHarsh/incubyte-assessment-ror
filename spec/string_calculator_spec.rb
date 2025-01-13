@@ -8,4 +8,9 @@ describe StringCalculator do
     it "should return the number itself for a single number" do
         expect(StringCalculator.calculate("1")).to eq(1)
     end
+
+    it "should return the sum for multiple numbers" do
+        expect(StringCalculator.calculate("1,2,3")).to eq(6)
+        expect(StringCalculator.calculate("1,2,3,4")).to eq(10)
+    end
 end
