@@ -27,4 +27,8 @@ describe StringCalculator do
         expect { StringCalculator.calculate("-1") }.to raise_error(ArgumentError)
         expect { StringCalculator.calculate("//.\n1.-2.3") }.to raise_error(ArgumentError)
     end
+
+    it "should ignore numbers more than 1000" do
+        expect(StringCalculator.calculate("1001,1002,4")).to eq(4)
+    end
 end
