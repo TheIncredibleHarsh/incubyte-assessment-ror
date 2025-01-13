@@ -13,4 +13,8 @@ describe StringCalculator do
         expect(StringCalculator.calculate("1,2,3")).to eq(6)
         expect(StringCalculator.calculate("1,2,3,4")).to eq(10)
     end
+
+    it "should return the sum even if there are new lines" do
+        expect(StringCalculator.calculate("1\n2,3")).to eq(6)
+    end
 end
